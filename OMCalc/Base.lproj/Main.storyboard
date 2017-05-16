@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nzy-Oq-ZB5">
-    <device id="ipad12_9" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,11 +18,11 @@
                         <viewControllerLayoutGuide type="bottom" id="iqH-c5-n6c"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ikz-rR-1Tt">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hta-nG-GgU">
-                                <rect key="frame" x="352" y="495" width="320" height="376"/>
+                                <rect key="frame" x="27.5" y="145.5" width="320" height="376"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e0Q-Cy-LOr">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
@@ -33,7 +33,7 @@
                                             <outlet property="delegate" destination="nzy-Oq-ZB5" id="xoe-ap-jGe"/>
                                         </connections>
                                     </textField>
-                                    <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbt-kc-80U">
+                                    <pickerView hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbt-kc-80U">
                                         <rect key="frame" x="0.0" y="40" width="320" height="216"/>
                                         <connections>
                                             <outlet property="dataSource" destination="nzy-Oq-ZB5" id="alE-iH-dTd"/>

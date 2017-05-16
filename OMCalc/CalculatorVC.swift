@@ -44,10 +44,16 @@ extension CalculatorVC: UIPickerViewDataSource {
 extension CalculatorVC: UITextFieldDelegate {
   func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
     let dropDownIsHidden = self.methodDropDown.isHidden
-    let duration = dropDownIsHidden ? 0.5 : 0.2
-    UIView.animate(withDuration: duration) {
-      self.methodDropDown.isHidden = !dropDownIsHidden
+    let alphaDuration = dropDownIsHidden ? 0.0 : 0.2
+
+    UIView.animate(withDuration: alphaDuration, delay: 0, options: [], animations: {
+      self.methodDropDown.alpha = 1 - self.methodDropDown.alpha
+    }) { finished in
+      UIView.animate(withDuration: 0.4, animations: {
+        self.methodDropDown.isHidden = !self.methodDropDown.isHidden
+      })
     }
+
     return false
   }
 }
