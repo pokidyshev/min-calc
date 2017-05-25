@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		244C85351ECCCC7700E5C384 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244C85341ECCCC7700E5C384 /* GraphView.swift */; };
+		244C85371ECCCD8300E5C384 /* AxesDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244C85361ECCCD8300E5C384 /* AxesDrawer.swift */; };
+		244C85391ECCD39600E5C384 /* GraphVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244C85381ECCD39600E5C384 /* GraphVC.swift */; };
 		24562DB11EC6297600B7FBAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24562DB01EC6297600B7FBAC /* AppDelegate.swift */; };
 		24562DB61EC6297600B7FBAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24562DB41EC6297600B7FBAC /* Main.storyboard */; };
 		24562DB81EC6297600B7FBAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24562DB71EC6297600B7FBAC /* Assets.xcassets */; };
@@ -14,9 +17,13 @@
 		24562DC41EC62C9500B7FBAC /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24562DC31EC62C9500B7FBAC /* CalculatorBrain.swift */; };
 		24562DC61EC64CEB00B7FBAC /* CalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24562DC51EC64CEB00B7FBAC /* CalculatorVC.swift */; };
 		24562DC81EC8D81200B7FBAC /* Sht.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24562DC71EC8D81200B7FBAC /* Sht.swift */; };
+		24FA818A1ED6145B00089CFD /* MinimizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FA81891ED6145B00089CFD /* MinimizationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		244C85341ECCCC7700E5C384 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		244C85361ECCCD8300E5C384 /* AxesDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxesDrawer.swift; sourceTree = "<group>"; };
+		244C85381ECCD39600E5C384 /* GraphVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphVC.swift; sourceTree = "<group>"; };
 		24562DAD1EC6297600B7FBAC /* OMCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OMCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24562DB01EC6297600B7FBAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24562DB51EC6297600B7FBAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -26,6 +33,7 @@
 		24562DC31EC62C9500B7FBAC /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 		24562DC51EC64CEB00B7FBAC /* CalculatorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorVC.swift; sourceTree = "<group>"; };
 		24562DC71EC8D81200B7FBAC /* Sht.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sht.swift; sourceTree = "<group>"; };
+		24FA81891ED6145B00089CFD /* MinimizationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinimizationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,10 +47,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		244C853A1ECCD5AA00E5C384 /* Calculation */ = {
+			isa = PBXGroup;
+			children = (
+				24562DC31EC62C9500B7FBAC /* CalculatorBrain.swift */,
+				24562DC51EC64CEB00B7FBAC /* CalculatorVC.swift */,
+				24562DC71EC8D81200B7FBAC /* Sht.swift */,
+			);
+			name = Calculation;
+			sourceTree = "<group>";
+		};
+		244C853B1ECCD5C000E5C384 /* Graphing */ = {
+			isa = PBXGroup;
+			children = (
+				244C85361ECCCD8300E5C384 /* AxesDrawer.swift */,
+				244C85341ECCCC7700E5C384 /* GraphView.swift */,
+				24FA81891ED6145B00089CFD /* MinimizationView.swift */,
+				244C85381ECCD39600E5C384 /* GraphVC.swift */,
+			);
+			name = Graphing;
+			sourceTree = "<group>";
+		};
 		24562DA41EC6297600B7FBAC = {
 			isa = PBXGroup;
 			children = (
 				24562DAF1EC6297600B7FBAC /* OMCalc */,
+				24562DB41EC6297600B7FBAC /* Main.storyboard */,
 				24562DAE1EC6297600B7FBAC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,11 +88,9 @@
 		24562DAF1EC6297600B7FBAC /* OMCalc */ = {
 			isa = PBXGroup;
 			children = (
-				24562DB41EC6297600B7FBAC /* Main.storyboard */,
-				24562DC31EC62C9500B7FBAC /* CalculatorBrain.swift */,
-				24562DC51EC64CEB00B7FBAC /* CalculatorVC.swift */,
-				24562DC71EC8D81200B7FBAC /* Sht.swift */,
 				24562DC21EC62B1800B7FBAC /* Supporting Files */,
+				244C853A1ECCD5AA00E5C384 /* Calculation */,
+				244C853B1ECCD5C000E5C384 /* Graphing */,
 			);
 			path = OMCalc;
 			sourceTree = "<group>";
@@ -151,10 +179,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				244C85351ECCCC7700E5C384 /* GraphView.swift in Sources */,
 				24562DC41EC62C9500B7FBAC /* CalculatorBrain.swift in Sources */,
+				244C85391ECCD39600E5C384 /* GraphVC.swift in Sources */,
 				24562DB11EC6297600B7FBAC /* AppDelegate.swift in Sources */,
+				24FA818A1ED6145B00089CFD /* MinimizationView.swift in Sources */,
 				24562DC61EC64CEB00B7FBAC /* CalculatorVC.swift in Sources */,
 				24562DC81EC8D81200B7FBAC /* Sht.swift in Sources */,
+				244C85371ECCCD8300E5C384 /* AxesDrawer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +199,7 @@
 				24562DB51EC6297600B7FBAC /* Base */,
 			);
 			name = Main.storyboard;
+			path = OMCalc;
 			sourceTree = "<group>";
 		};
 		24562DB91EC6297600B7FBAC /* LaunchScreen.storyboard */ = {
@@ -318,6 +351,7 @@
 				24562DC11EC6297600B7FBAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

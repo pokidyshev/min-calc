@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nzy-Oq-ZB5">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="41m-6y-sAV">
+    <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,6 +9,19 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Split View Controller-->
+        <scene sceneID="WQL-G4-GsP">
+            <objects>
+                <splitViewController id="41m-6y-sAV" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="Lfl-F7-4XQ" kind="relationship" relationship="masterViewController" id="WlJ-7z-jTv"/>
+                        <segue destination="ghL-wD-Xye" kind="relationship" relationship="detailViewController" id="YaY-MI-NcV"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kOW-ZM-H75" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1570" y="-159"/>
+        </scene>
         <!--CalculatorVC-->
         <scene sceneID="rcR-dt-TOr">
             <objects>
@@ -18,14 +31,14 @@
                         <viewControllerLayoutGuide type="bottom" id="iqH-c5-n6c"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ikz-rR-1Tt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hta-nG-GgU">
-                                <rect key="frame" x="27.5" y="145.5" width="320" height="376"/>
+                                <rect key="frame" x="20" y="84" width="280" height="310"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e0Q-Cy-LOr">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -34,45 +47,144 @@
                                         </connections>
                                     </textField>
                                     <pickerView hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbt-kc-80U">
-                                        <rect key="frame" x="0.0" y="40" width="320" height="216"/>
+                                        <rect key="frame" x="0.0" y="40" width="280" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="rU8-1X-l7u"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="dataSource" destination="nzy-Oq-ZB5" id="alE-iH-dTd"/>
                                             <outlet property="delegate" destination="nzy-Oq-ZB5" id="aKs-A9-Xl4"/>
                                         </connections>
                                     </pickerView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Начало отрезка" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YiX-Ko-v68">
-                                        <rect key="frame" x="0.0" y="266" width="320" height="30"/>
+                                        <rect key="frame" x="0.0" y="200" width="280" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Конец отрезка" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Dw-ZS-ZcI">
-                                        <rect key="frame" x="0.0" y="306" width="320" height="30"/>
+                                        <rect key="frame" x="0.0" y="240" width="280" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTv-7L-W6z">
-                                        <rect key="frame" x="0.0" y="346" width="320" height="30"/>
+                                        <rect key="frame" x="0.0" y="280" width="280" height="30"/>
                                         <state key="normal" title="Рассчитать минимум"/>
+                                        <connections>
+                                            <segue destination="ghL-wD-Xye" kind="showDetail" identifier="Plot" id="iYY-gj-9Vz"/>
+                                        </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="zg7-uS-Ouw"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="hta-nG-GgU" firstAttribute="top" secondItem="tu1-uh-VDR" secondAttribute="bottom" constant="20" id="7fH-bY-p3f"/>
                             <constraint firstItem="hta-nG-GgU" firstAttribute="centerX" secondItem="Ikz-rR-1Tt" secondAttribute="centerX" id="TVM-FL-OEW"/>
-                            <constraint firstItem="hta-nG-GgU" firstAttribute="centerY" secondItem="Ikz-rR-1Tt" secondAttribute="centerY" id="fii-zy-mUq"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="nNx-Nz-url"/>
                     <connections>
+                        <outlet property="endTextField" destination="2Dw-ZS-ZcI" id="fAM-Qg-CLN"/>
                         <outlet property="methodDropDown" destination="jbt-kc-80U" id="nOr-8e-5hs"/>
                         <outlet property="methodTextBox" destination="e0Q-Cy-LOr" id="3b7-7n-ayD"/>
+                        <outlet property="startTextField" destination="YiX-Ko-v68" id="xYa-HS-VX9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CIa-61-eO8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5.625" y="121.25"/>
+            <point key="canvasLocation" x="22" y="-349"/>
+        </scene>
+        <!--GraphVC-->
+        <scene sceneID="tKo-Ch-fj1">
+            <objects>
+                <viewController id="yIw-SH-NYF" customClass="GraphVC" customModule="OMCalc" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c0N-aN-2Cw"/>
+                        <viewControllerLayoutGuide type="bottom" id="x2T-Wg-R8t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dDK-RZ-4bF">
+                        <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="LoP-rn-cQf" customClass="MinimizationView" customModule="OMCalc" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="702.5" height="704"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="origin">
+                                        <point key="value" x="300" y="350"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="2gy-tg-oBP" appends="YES" id="d6i-FD-xZh"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LoP-rn-cQf" firstAttribute="bottom" secondItem="x2T-Wg-R8t" secondAttribute="top" id="ErW-SQ-OXS"/>
+                            <constraint firstAttribute="trailing" secondItem="LoP-rn-cQf" secondAttribute="trailing" id="a34-Lo-ca6"/>
+                            <constraint firstItem="LoP-rn-cQf" firstAttribute="top" secondItem="c0N-aN-2Cw" secondAttribute="bottom" id="gP2-uk-NHU"/>
+                            <constraint firstItem="LoP-rn-cQf" firstAttribute="leading" secondItem="dDK-RZ-4bF" secondAttribute="leading" id="rWa-rS-wWJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Vyu-db-Y7T"/>
+                    <connections>
+                        <outlet property="graphView" destination="LoP-rn-cQf" id="XE3-1K-kbS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j3K-Mn-DJq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="2gy-tg-oBP">
+                    <connections>
+                        <action selector="handlePanByReactinTo:" destination="yIw-SH-NYF" id="nrw-3k-k42"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="898" y="384"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3i5-JS-3Zs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lfl-F7-4XQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NJh-86-gVa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nzy-Oq-ZB5" kind="relationship" relationship="rootViewController" id="DOs-sT-wPJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2xI-6N-L51" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-791" y="-349"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Mzr-kB-a6Z">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ghL-wD-Xye" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xaQ-yB-vkm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yIw-SH-NYF" kind="relationship" relationship="rootViewController" id="U0U-uz-A7V"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OKu-gh-dp2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="22" y="384"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="iYY-gj-9Vz"/>
+    </inferredMetricsTieBreakers>
 </document>
