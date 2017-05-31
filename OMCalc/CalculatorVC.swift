@@ -36,9 +36,10 @@ class CalculatorVC: UIViewController {
 
     let f: (Double) -> Double = { sin($0) }
     let df: (Double) -> Double = { cos($0) }
+    let ddf: (Double) -> Double = { -sin($0) }
 
-    let start = Double(startTextField.text ?? "")!
-    let end = Double(endTextField.text ?? "")!
+    let start = Double(startTextField.text ?? "") ?? 0.0
+    let end = Double(endTextField.text ?? "") ?? 0.0
 
     var minX: Double
     switch currentMethod {
@@ -49,7 +50,7 @@ class CalculatorVC: UIViewController {
     case "Парабол":
       minX = CalculatorBrain.Parabolic(startX: start, endX: end, f: f)
     case "Ньютона":
-      minX = CalculatorBrain.Newton(startX: start, endX: end, f: f, df: df)
+      minX = CalculatorBrain.Newton(startX: start, endX: end, df: df, ddf: ddf)
     default:
       return
     }
@@ -120,9 +121,7 @@ extension CalculatorVC: UISplitViewControllerDelegate {
     onto primaryViewController: UIViewController
   ) -> Bool {
     if primaryViewController.contents == self {
-      if let gvc = secondaryViewController.contents as? GraphVC,
-        gvc.function == nil
-      {
+      if let gvc = secondaryViewController.contents as? GraphVC, gvc.function == nil {
         return true
       }
     }

@@ -20,11 +20,13 @@ struct CalculatorBrain {
 
   static var epsilon = 0.001
 
-  static func Bisection(startX: Double, endX: Double, f: (Double) -> (Double)) -> Double {
+  typealias LinearFunction = (Double) -> (Double)
+
+  static func Bisection(startX: Double, endX: Double, f: LinearFunction) -> Double {
     return Section(startX: startX, endX: endX, k1: 3.0/8, k2: 5.0/8, f: f)
   }
 
-  static func GoldenSection(startX: Double, endX: Double, f: (Double) -> (Double)) -> Double {
+  static func GoldenSection(startX: Double, endX: Double, f: LinearFunction) -> Double {
     // коэффициенты золотого сечения
     let alpha1 = (3 - sqrt(5)) / 2
     let alpha2 = (sqrt(5) - 1) / 2
@@ -33,17 +35,26 @@ struct CalculatorBrain {
   }
 
   // Not implemented yet
-  static func Parabolic(startX: Double, endX: Double, f: (Double) -> (Double)) -> Double {
+  static func Parabolic(startX: Double, endX: Double, f: LinearFunction) -> Double {
     return Bisection(startX: startX, endX: endX, f: f)
   }
 
-  static func Newton(startX: Double, endX: Double, f: (Double) -> (Double), df: (Double) -> (Double)) -> Double {
-    return GoldenSection(startX: startX, endX: endX, f: f)
+  static func Newton(startX: Double, endX: Double, df: LinearFunction, ddf: LinearFunction) -> Double {
+
+    var u = startX
+    var dfu = df(u)
+
+    while abs(dfu) > epsilon {
+      u -= dfu/ddf(u)
+      dfu = df(u)
+    }
+
+    return u
   }
 
   // MARK: Private helpers
 
-  private static func Section(startX: Double, endX: Double, k1: Double, k2: Double, f: (Double) -> (Double)) -> Double {
+  private static func Section(startX: Double, endX: Double, k1: Double, k2: Double, f: LinearFunction) -> Double {
     var a = startX
     var b = endX
 
